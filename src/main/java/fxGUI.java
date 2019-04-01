@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class fxGUI extends Application implements EventHandler<ActionEvent> {
-    static String filePath = "E:\\DocumentsForLongTermStorage\\SquadronReadiness\\";
+    static String filePath = "Z:\\25_REPORTS\\SquadronReadiness\\ProgramFiles\\";
     Stage primaryStage;
     SplitMenuButton indvSplitMenu;
     Button squadSelectionButton;

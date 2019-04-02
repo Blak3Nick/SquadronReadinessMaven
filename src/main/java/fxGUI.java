@@ -33,6 +33,8 @@ public class fxGUI extends Application implements EventHandler<ActionEvent> {
     Button fire22;
     Button fire23;
     Button fire24;
+    Button fire15;
+    Button fire25;
     Button fireHome;
     Button indvHome;
     VBox individualSceneLayout;
@@ -61,8 +63,12 @@ public class fxGUI extends Application implements EventHandler<ActionEvent> {
         Panel indvPanel = new Panel("Select an individual from the drop down menu");
         indvPanel.getStyleClass().add("panel-primary");
 
-
+        try {
         setUp();
+        } catch (IOException ioe) {
+            System.out.println("Error setting up...");
+            ioe.printStackTrace();
+        }
         addButtons();
         openingSceneLayout = new GridPane();
         GridPane fireSelectionSceneLayout = new GridPane();
@@ -91,19 +97,21 @@ public class fxGUI extends Application implements EventHandler<ActionEvent> {
 //        }
         Panel firePanel = new Panel("Choose your fire team.");
         firePanel.getStyleClass().add("panel-primary");
-        fireSelectionSceneLayout.add(firePanel, 0, 0,4 ,2);
+        fireSelectionSceneLayout.add(firePanel, 0, 0,5 ,2);
 
         fireSelectionSceneLayout.add(fire11, 0,2);
         fireSelectionSceneLayout.add(fire12, 1,2);
         fireSelectionSceneLayout.add(fire13, 2,2);
         fireSelectionSceneLayout.add(fire14, 3,2);
+        fireSelectionSceneLayout.add(fire15, 4,2);
         fireSelectionSceneLayout.add(fire21, 0, 3);
         fireSelectionSceneLayout.add(fire22, 1, 3);
         fireSelectionSceneLayout.add(fire23, 2, 3);
         fireSelectionSceneLayout.add(fire24, 3, 3);
+        fireSelectionSceneLayout.add(fire25, 4, 3);
         fireSelectionSceneLayout.add(fireHome, 0,4);
 
-        fireSelectionScene = new Scene(fireSelectionSceneLayout, 370, 250);
+        fireSelectionScene = new Scene(fireSelectionSceneLayout, 455, 250);
 
 
         squadSelectionButton.setOnAction(e -> primaryStage.setScene(squadSelectionScene));
@@ -121,10 +129,12 @@ public class fxGUI extends Application implements EventHandler<ActionEvent> {
         fire12.setOnAction(e -> handleButton.handle(fire12));
         fire13.setOnAction(e -> handleButton.handle(fire13));
         fire14.setOnAction(e -> handleButton.handle(fire14));
+        fire15.setOnAction(e -> handleButton.handle(fire15));
         fire21.setOnAction(e -> handleButton.handle(fire21));
         fire22.setOnAction(e -> handleButton.handle(fire22));
         fire23.setOnAction(e -> handleButton.handle(fire23));
         fire24.setOnAction(e -> handleButton.handle(fire24));
+        fire25.setOnAction(e -> handleButton.handle(fire25));
 
 
 
@@ -230,6 +240,10 @@ public class fxGUI extends Application implements EventHandler<ActionEvent> {
         fire14.setId("fire14");
         fire14.getStyleClass().setAll("btn-lg", "btn-info");
 
+        fire15 = new Button("  1-5  ");
+        fire15.setId("fire15");
+        fire15.getStyleClass().setAll("btn-lg", "btn-info");
+
         fire21 = new Button("  2-1  ");
         fire21.setId("fire21");
         fire21.getStyleClass().setAll("btn-lg", "btn-warning");
@@ -245,6 +259,10 @@ public class fxGUI extends Application implements EventHandler<ActionEvent> {
         fire24 = new Button("  2-4  ");
         fire24.setId("fire24");
         fire24.getStyleClass().setAll("btn-lg", "btn-warning");
+
+        fire25 = new Button("  2-5  ");
+        fire25.setId("fire25");
+        fire25.getStyleClass().setAll("btn-lg", "btn-warning");
 
         indvSplitMenu = new SplitMenuButton();
         indvSplitMenu.setText("All SFS Members");

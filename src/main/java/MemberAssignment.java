@@ -13,7 +13,7 @@ public final class MemberAssignment {
     public static ArrayList<String> squad1Members;
     public static ArrayList<String> squad2Members;
     public static ArrayList<String> catmMembers;
-    public static ArrayList<String>[] fireTeamMembers = new ArrayList[8];
+    public static ArrayList<String>[] fireTeamMembers = new ArrayList[10];
     public static ArrayList<Member> allMembersSelectedForEvaluation;
 
     private MemberAssignment(){}
@@ -58,20 +58,22 @@ public final class MemberAssignment {
     }
 
     public static void assignFire() throws IOException {
+        int increment = 1;
+        for (int i=0; i<10; i++) {
 
-        for (int i=0; i<8; i++) {
-            int increment = 1;
-            if(increment >4) {
+            if(increment >5) {
                 increment = 1;
             }
             String fileName = "fire";
-            if(i<4){
+            if(i<5){
                 fileName+="1-";
             }
             else {
                 fileName+="2-";
             }
             fileName+= increment + ".txt";
+            increment++;
+            System.out.println(fileName);
             ArrayList<String> requestedMembers = new ArrayList<>();
             file = new File(filePath+fileName);
 

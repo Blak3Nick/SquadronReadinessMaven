@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class fxGUI extends Application implements EventHandler<ActionEvent> {
+    //static String filePath = "E:\\DocumentsForLongTermStorage\\SquadronReadiness\\";
     static String filePath = "Z:\\25_REPORTS\\SquadronReadiness\\ProgramFiles\\";
     Stage primaryStage;
     SplitMenuButton indvSplitMenu;
@@ -87,14 +88,7 @@ public class fxGUI extends Application implements EventHandler<ActionEvent> {
 
         fireSelectionSceneLayout.setHgap(10);
         fireSelectionSceneLayout.setVgap(5);
-//        for (int i=0; i<4; i++) {
-//            RowConstraints row = new RowConstraints(35);
-//            fireSelectionSceneLayout.getRowConstraints().add(row);
-//        }
-//        for (int i=0; i<4; i++) {
-//            ColumnConstraints column = new ColumnConstraints(35);
-//            fireSelectionSceneLayout.getColumnConstraints().add(column);
-//        }
+
         Panel firePanel = new Panel("Choose your fire team.");
         firePanel.getStyleClass().add("panel-primary");
         fireSelectionSceneLayout.add(firePanel, 0, 0,5 ,2);
